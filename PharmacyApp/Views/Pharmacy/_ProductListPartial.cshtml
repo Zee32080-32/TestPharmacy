@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PharmacyApp.ViewModels.ProductViewModel>
+
+@foreach (var product in Model)
+{
+    <div class="bg-white p-4 rounded-lg shadow-md" data-category="@product.ProductCategory">
+        <img src="@product.ProductPicUrl" alt="@product.ProductName" class="w-full h-32 object-cover mb-4 rounded">
+        <h3 class="text-lg font-semibold">@product.ProductName</h3>
+        <p class="text-gray-600 text-sm mb-2">@product.Description</p>
+        <p class="text-blue-600 font-bold mb-2">£@product.Price</p>
+        <button class="w-full mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            Add to Cart
+        </button>
+    </div>
+}

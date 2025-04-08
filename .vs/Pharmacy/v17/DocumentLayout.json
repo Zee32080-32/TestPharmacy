@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Zeeshan\\Documents\\Pharmacy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|d:\\zeeshan\\documents\\pharmacy\\pharmacyapp\\controllers\\form2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|solutionrelative:pharmacyapp\\controllers\\form2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|d:\\zeeshan\\documents\\pharmacy\\pharmacyapp\\repositories\\form2repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|solutionrelative:pharmacyapp\\repositories\\form2repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|d:\\zeeshan\\documents\\pharmacy\\pharmacyapp\\services\\form2service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|solutionrelative:pharmacyapp\\services\\form2service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|d:\\zeeshan\\documents\\pharmacy\\pharmacyapp\\views\\form2\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1FB95624-407E-4B8D-B715-0173C5D13B15}|PharmacyApp\\PharmacyApp.csproj|solutionrelative:pharmacyapp\\views\\form2\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2Service.cs",
+              "DocumentMoniker": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Services\\Form2Service.cs",
+              "RelativeDocumentMoniker": "PharmacyApp\\Services\\Form2Service.cs",
+              "ToolTip": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Services\\Form2Service.cs",
+              "RelativeToolTip": "PharmacyApp\\Services\\Form2Service.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAAAH4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T22:37:16.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form2Repository.cs",
+              "DocumentMoniker": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Repositories\\Form2Repository.cs",
+              "RelativeDocumentMoniker": "PharmacyApp\\Repositories\\Form2Repository.cs",
+              "ToolTip": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Repositories\\Form2Repository.cs",
+              "RelativeToolTip": "PharmacyApp\\Repositories\\Form2Repository.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAwwGQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T22:30:23.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2Controller.cs",
+              "DocumentMoniker": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Controllers\\Form2Controller.cs",
+              "RelativeDocumentMoniker": "PharmacyApp\\Controllers\\Form2Controller.cs",
+              "ToolTip": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Controllers\\Form2Controller.cs",
+              "RelativeToolTip": "PharmacyApp\\Controllers\\Form2Controller.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T22:23:15.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Views\\Form2\\Index.cshtml",
+              "RelativeDocumentMoniker": "PharmacyApp\\Views\\Form2\\Index.cshtml",
+              "ToolTip": "D:\\Zeeshan\\Documents\\Pharmacy\\PharmacyApp\\Views\\Form2\\Index.cshtml",
+              "RelativeToolTip": "PharmacyApp\\Views\\Form2\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-07T22:10:18.933Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

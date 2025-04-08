@@ -1,0 +1,18 @@
+﻿<div class="cart">
+    <h3>Your Cart</h3>
+    <ul>
+        @foreach (var item in Model.CartItems)
+        {
+            <li>
+                <span>@item.ProductName</span>
+                <span>£@item.TotalPrice</span>
+                <span>
+                    <input type="number" value="@item.Quantity" min="1" class="quantity" data-product-id="@item.ProductId" />
+                </span>
+                <button class="remove-item" data-product-id="@item.ProductId">Remove</button>
+            </li>
+        }
+    </ul>
+
+    <h4>Total: £@Model.TotalPrice</h4>
+</div>

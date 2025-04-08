@@ -1,0 +1,184 @@
+﻿@{
+    Layout = "_Layout";  // Use the layout page if you have one
+}
+
+@model IEnumerable<PharmacyApp.ViewModels.ProductViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare E-Commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-semibold">Healthcare Store</h1>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">Products</a>
+                <a href="#" class="hover:underline">About Us</a>
+                <a href="#" class="hover:underline">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8">
+
+        <!-- Search Bar & Category Dropdown -->
+        <div class="flex justify-between items-center mb-6">
+
+            <!-- Category Dropdown -->
+            <div class="w-1/4">
+                <label for="categories" class="block text-gray-700 font-medium">Select Category</label>
+                <select id="categories" onchange="filterbyCategory()" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg">
+                    <option value="vitamins" id="vitamins">Vitamins</option>
+                    <option value="supplements" id="supplements">Supplements</option>
+                    <option value="personal-care" id="personal-care">Personal Care</option>
+                </select>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="w-1/2 flex items-center space-x-4">
+                <input type="text" id="search" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Search for healthcare products...">
+                <button onclick="SearchForProduct()" type="button" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Search</button>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="w-1/4 flex justify-end">
+                <button onclick="attachAddToCartEvents()" type="button" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">view cart</button>
+            </div>
+        </div>
+
+        <!--Hot Products (done by low in stock) -->
+        <div id="product-list" class="grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @foreach (var product in Model)
+                {
+                    <div class="bg-white p-4 rounded-lg shadow-md" data-category ="@product.ProductCategory">
+                        <img src="@product.ProductPicUrl" alt="@product.ProductName" class="w-full h-32 object-cover mb-4 rounded">
+                        <h3 class="text-lg font-semibold">@product.ProductName</h3>
+                        <p class="text-gray-600 text-sm mb-2">@product.Description</p>
+                        <p class="text-blue-600 font-bold mb-2">£@product.Price</p>
+                        <button onclick="QuickViewClick(`@product.ProductName`)" class="w-full mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Quick View
+                        </button>
+                        <button onclick="QuickBuy('@product.ProductName')" class="w-full mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Purchase now 
+                        </button>
+                        <button class="add-to-cart-btn w-full mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            Add to Cart
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!--Quick View-->
+        <div id="quick-view-model" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center flex z-50">
+            <div class="bg-white p-6 rounded-lg max-w-lg w-full">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Quick View</h2>
+                    <button id="close-model" class="text-red-500 font-bold text-xl">X</button>
+                </div>
+                <div id="quick-view-content">
+                </div>
+            </div>
+        </div>
+        
+        <!--Quick Purchaase-->
+        <div id="quick-buy-model" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center flex z-50">
+            <div class="bg-white p-6 rounded-lg max-w-lg w-full">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Quick buy</h2>
+                    <button id="close-model" class="text-red-500 font-bold text-xl">X</button>
+                </div>
+                <div id="quick-buy-content">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Healthcare Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+@section Scripts
+{
+    <script>
+        function filterbyCategory() 
+        {
+            //get the selected val from the drop down
+            const selectedCategory = document.getElementById("categories").value;
+            //fetch the Filter method in my controller and set the end value to be selected val
+            //convert it to text html 
+            //add that newhtml to the product-list div
+            fetch(`/Pharmacy/Filter?productCategory=${selectedCategory}`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("product-list").innerHTML = html;
+                });
+        }
+
+        function SearchForProduct() 
+        {
+            //get the user search input
+            const CustomerSearch = document.getElementById("search").value;
+
+            fetch(`/Pharmacy/Search?ProductName=${CustomerSearch}`).then(response => response.text())
+            .then(html => {
+                document.getElementById("product-list").innerHTML = html;
+            })
+        }
+
+        function QuickViewClick(productName) 
+        {
+
+            fetch(`/Pharmacy/QuickView?ProductName=${productName}`).then(response => response.text())
+            .then(html => 
+            {
+                //inject the html into the model
+                document.getElementById("quick-view-content").innerHTML = html;
+            })
+
+            document.getElementById("quick-view-model").classList.remove("hidden");
+            document.getElementById("close-model").addEventListener("click", closeModel);
+        }
+
+        function QuickBuy(productName) 
+        {
+            const customerEmail = "Zeeshan_Khalish@outlook.com"
+            fetch(`/Pharmacy/QuickPurchase?productName=${encodeURIComponent(productName)}&customerDetails=${encodeURIComponent(customerEmail)}`).then(response => response.text())
+                .then(html => {
+                    //inject the html into the model
+                    //document.getElementById("quick-buy-content").innerHTML = html;
+                })
+
+            document.getElementById("quick-buy-model").classList.remove("hidden");
+            document.getElementById("close-model").addEventListener("click", closeModel);
+        }
+        function closeModel() 
+        {
+            // Hide the modal again
+            document.getElementById("quick-view-model").classList.add("hidden");
+
+            //clear the content inside the model
+            document.getElementById("quick-view-content").innerHTML = '';
+        }
+
+        
+    
+
+    </script>
+}
